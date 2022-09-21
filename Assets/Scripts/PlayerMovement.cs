@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 input = value.Get<Vector2>();
         _velocity = new Vector3(input.x, 0, input.y);
-        transform.forward = _velocity;
+        if (input != Vector2.zero)
+            transform.forward = _velocity;
     }
 }
