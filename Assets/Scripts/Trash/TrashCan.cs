@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrashCan : MonoBehaviour
 {
-    [SerializeField] private Trash.TrashType trashType;
+    [SerializeField] private Trash.TrashType _trashType;
     private float _collectTime;
     private PlayerInventory _inventory;
 
@@ -20,12 +20,13 @@ public class TrashCan : MonoBehaviour
     {
         if (_inventory.GetInventory().Count == 0)
             return;
-        if (_inventory.GetInventory()[0].GetTrashType() == trashType)
+        if (_inventory.GetInventory()[0].GetTrashType() == _trashType)
         {
             if (_collectTime < Time.time)
             {
                 _collectTime = Time.time + 0.5f;
                 _inventory.Remove(0);
+                CannonAction.instance.AddAmmo(_trashType);
             }
         }
     }
@@ -43,5 +44,10 @@ public class TrashCan : MonoBehaviour
         {
             _inventory = null;
         }
+    }
+    private void OnMouseDown()
+    {
+        print($"Equip {_trashType}");
+        CannonAction.instance.EquipAmmo(_trashType);
     }
 }
