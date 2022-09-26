@@ -25,6 +25,8 @@ public class EnemyBehaviour : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _player = FindObjectOfType<PlayerCombat>().transform;
+        _base = FindObjectOfType<Wall>().transform;
     }
 
     // Update is called once per frame

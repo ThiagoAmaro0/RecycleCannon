@@ -8,14 +8,13 @@ public class TrashSpawnManager : MonoBehaviour
     [SerializeField] private Trash _metalPrefab;
     [SerializeField] private Trash _plasticPrefab;
     [SerializeField] private Trash _organicPrefab;
-    private List<Trash> _pullingList;
+    [SerializeField] private List<Trash> _pullingList;
 
     public static TrashSpawnManager instance;
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        _pullingList = new List<Trash>();
     }
 
     public void SpawnTrash(TrashType type, Vector3 position)

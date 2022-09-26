@@ -5,14 +5,9 @@ using DG.Tweening;
 public class CannonAction : MonoBehaviour
 {
     [SerializeField] private float _projectileSpeed;
-    [SerializeField] private Rigidbody _metalAmmo;
-    [SerializeField] private Rigidbody _organicAmmo;
-    [SerializeField] private Rigidbody _plasticAmmo;
-    [SerializeField] private GameObject _metalPreview;
-    [SerializeField] private GameObject _organicPreview;
-    [SerializeField] private GameObject _plasticPreview;
-    [SerializeField] private Transform _startPos;
-    [SerializeField] private Transform _aim;
+    [SerializeField] private Rigidbody _metalAmmo, _organicAmmo, _plasticAmmo;
+    [SerializeField] private GameObject _metalPreview, _organicPreview, _plasticPreview;
+    [SerializeField] private Transform _startPos, _aim;
     private Trash.TrashType _equippedAmmo;
     private Dictionary<Trash.TrashType, int> _ammo;
     private Dictionary<Trash.TrashType, Rigidbody> _rigidbodys;
