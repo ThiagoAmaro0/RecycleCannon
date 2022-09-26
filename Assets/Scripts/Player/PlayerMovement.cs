@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    [SerializeField] private Animator _anim;
     private Rigidbody _rb;
     private Vector3 _velocity;
 
@@ -29,7 +30,14 @@ public class PlayerMovement : MonoBehaviour
         Vector2 input = value.Get<Vector2>();
         _velocity = new Vector3(input.x, 0, input.y);
         if (input != Vector2.zero)
+        {
+            _anim.SetBool("Walk", true);
             transform.forward = _velocity;
+        }
+        else
+        {
+            _anim.SetBool("Walk", false);
+        }
     }
 
     public void Stop()

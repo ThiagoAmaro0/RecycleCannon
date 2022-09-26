@@ -48,8 +48,8 @@ public class CannonAction : MonoBehaviour
 
 
         if (_ammo[_equippedAmmo] == 0)
-            return;
-        _previews[_equippedAmmo].SetActive(false);
+            _previews[_equippedAmmo].SetActive(false);
+
 
 
     }

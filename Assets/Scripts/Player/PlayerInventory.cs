@@ -30,7 +30,6 @@ public class PlayerInventory : MonoBehaviour
         trash.transform.localPosition = new Vector3(0, _inventory.Count * 0.35f, 0);
         trash.transform.localRotation = Quaternion.identity;
         _inventory.Add(trash);
-        TrashSpawnManager.instance.SpawnTrash(trash.GetTrashType(), new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-3.5f, 3.5f)));
     }
 
     public List<Trash> GetInventory()
