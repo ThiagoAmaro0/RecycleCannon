@@ -47,7 +47,6 @@ public class TrashCan : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        print($"Equip {_trashType}");
         CannonAction.instance.EquipAmmo(_trashType);
     }
 }

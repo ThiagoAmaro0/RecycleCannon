@@ -62,7 +62,7 @@ public class CannonAction : MonoBehaviour
         rb.MovePosition(_startPos.position);
         rb.transform.parent = null;
         rb.DOPath(
-            new Vector3[] { _startPos.position, new Vector3(middle.x, distance / 3, middle.z), _aim.position },
+            new Vector3[] { _startPos.position, new Vector3(middle.x, distance / 2, middle.z), _aim.position },
             distance / _projectileSpeed, PathType.CatmullRom, PathMode.Ignore).SetEase(Ease.Linear);
     }
 
